@@ -1,0 +1,81 @@
+
+<html ng-app="app">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+        <title>Meera GitHub</title>
+
+        <link rel="stylesheet" href="lib/src/custombootstrap.css" media="screen" title="no title" charset="utf-8">
+    </head>
+	
+    <body  ng-controller="dataController">
+
+    
+        <div class="container">
+			<div class="panel  panel-default">
+                <div class="panel-heading">
+					<h4>User Details from GitHub</h4>
+				</div>
+                <div class="panel-body center-block">
+					<form class="form-inline">
+						<input type="text" ng-model="user.name" placeholder="Search an user..." class="form-control input-md"/>
+						<button ng-click="getData(user)" class="btn btn-primary">Search</button>
+					</form>
+				</div>
+			</div>
+			<h1 class="text-center">
+				<span ng-hide="repoData"/>See Results Below...</span>
+				<span>{{userData.name}}</span>
+				<br>
+				<a href="{{userData.html_url}}" class="btn btn-default">
+					{{userData.login}}                        
+				</a>
+
+			</h1>
+
+            <div class="panel  panel-default">
+                <div class="panel-heading">
+                    <h4>Repos <span class="badge">{{repoData.length}}</span></h4>
+                </div>
+                <div class="panel-body">
+                    <div class="list-group">
+                        <div ng-repeat="repo in repoData" class="list-group-item ">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <h4>
+                                        <a href="{{repo.html_url}}" target="_blank" >
+                                            {{repo.name}}
+                                        </a>
+                                        <small>{{repo.description}}</small>
+                                    </h4>
+
+                                    <small>
+                                        <a href="{{repo.homepage}}" class="">
+                                            <i class="fa fa-link"></i> WebPage
+                                        </a>
+                                    </small>
+                                </div>
+                                <div class="col-md-4">
+                                    <dl class="dl-horizontal">
+                                      <dt>Last Updated:</dt>
+                                      <dd>{{repo.updated_at | date : short : timezone}}</dd>
+                                      <dt>Created:</dt>
+                                      <dd>{{repo.created_at| date : short : timezone}}</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+        <script src="lib/src/angular.min.js" charset="utf-8"></script>
+        <script src="app/app.js" charset="utf-8"></script>
+
+    </body>
+    </body>
+</html>
