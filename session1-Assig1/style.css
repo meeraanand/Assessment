@@ -1,0 +1,70 @@
+body, body *{
+	padding: 0;
+	margin: 0;
+}
+#container{
+	width: 1000px;
+	height: 450px;
+	border: 3px solid #000;
+	margin: 0 auto;
+
+}
+h1 ,h2, .second{
+	padding: 0 0 0 10px;
+}
+p{
+	margin:10px 0px 10px 10px;
+	font-size: 14px;
+    font-family: "Times New Roman", Times, serif;
+
+}
+.para1 span{
+	text-decoration: underline;
+	font-weight: bold;
+
+}
+.para2 span{
+	font-style: italic;
+}
+.para3 span{
+	font-weight: bold;
+}
+
+.second img{
+	border: 1px solid #000;
+}
+#container .second{
+	width:200px;
+	float:left;
+
+
+}
+.second img,.four img,.five img{
+	border: 1px solid #000;
+
+}
+#container .third{
+	width:200px;
+	float:left;
+	margin-left:40px;
+
+
+}
+#container .four{
+	width:200px;
+	float:left;
+	margin-left:40px;
+
+
+}
+#container .five{
+	width:170px;
+	float:left;
+	margin-left:80px;
+
+}
+.clear{
+	clear: both;
+}
+
+
